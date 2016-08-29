@@ -49,7 +49,9 @@
                             <tr>
                                 <th class="col-lg-1" style="text-align:center;">Ảnh</th>
                                 <td class="col-lg-3">
-                                    <a class="btn btn-success col-lg-2" id="btnSelectImage" href="#">Chọn ảnh</a>
+                                    <img src="@Url.Content(Model.ImageLink)" width="250" />
+                                    <br />
+                                    <a class="btn btn-success col-lg-2" id="btnSelectImage" href="#">Sửa ảnh</a>
                                     @Html.TextBoxFor(model => model.ImageLink, new { @class = "textbox" })
                                 </td>
                             </tr>

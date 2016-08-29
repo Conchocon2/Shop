@@ -44,7 +44,7 @@ namespace Models.DAO
                                on a.ID equals b.ID
                                where a.ID == id
                                select b).ToList();
-                if (donhang != null)
+                if (donhang.Count != 0)
                 {
                     foreach (var item in donhang)
                     {

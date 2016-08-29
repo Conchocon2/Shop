@@ -18,7 +18,7 @@ namespace Models.EF
         public int ID { get; set; }
 
         public string Name { get; set; }
-
+        
         [StringLength(250)]
         public string Address { get; set; }
 

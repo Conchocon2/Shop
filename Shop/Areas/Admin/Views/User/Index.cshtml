@@ -66,6 +66,8 @@
                         </tbody>
                     </table>
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.searchString }))
+
+                    <div>@Html.ActionLink("Create", "Create")</div>
                 </div>
             </div>
         </div>

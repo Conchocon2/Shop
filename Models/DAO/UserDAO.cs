@@ -60,9 +60,9 @@ namespace Models.DAO
                               on o.ID equals c.Trans_ID
                               where c.Trans_ID == o.ID
                               select c).ToList();
-                if (giaodich != null)
+                if (giaodich.Count != 0)
                 {
-                    if (hoadon != null)
+                    if (hoadon.Count != 0)
                     {
                         for (int j = 1; j <= giaodich.Count; j++)
                         {

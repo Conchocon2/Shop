@@ -11,7 +11,7 @@ namespace Shop.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        public ActionResult Index(string searchString, int page = 1, int pageSize = 3)
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
         {
             var dao = new UserDAO();
             var model = dao.ListAllPage(searchString, page, pageSize);
