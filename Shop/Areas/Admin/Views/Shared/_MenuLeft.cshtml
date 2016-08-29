@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "_MenuLeft";
+    var session = (Shop.Common.UserLogin)Session[Shop.Common.CommonContants.USER_SESSION];
+}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="~/Admin/Home/Index">ADMIN</a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> @((session != null)?"Xin chào," + session.UserName:"") <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="~/Admin/User/Edit/@session.UserID"><i class="fa fa-user fa-fw"></i> Thông tin cá nhân</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="~/Admin/Login/Index"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <a href="~/Admin/Home/Index"><i class="fa fa-dashboard fa-fw"></i> Trang chu</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user fa-fw"></i> User<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="~/Admin/User/Index"> Account</a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/ChucVu/Index"> Posisin</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bell fa-fw"></i> San Pham<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="~/Admin/Product/Index"> Chi Tiet San Pham</a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/Category/Index"> Nhom San Pham</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

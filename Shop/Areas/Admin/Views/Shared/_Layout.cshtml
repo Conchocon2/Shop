@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/Content/admin/dist/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Content/admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/admin/datepicker/Bootstraps-datepicker.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        @RenderPage("_MenuLeft.cshtml")
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/Scripts/ckfinder/ckfinder.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/admin/dist/js/sb-admin-2.js"></script>
+    <script src="~/Content/admin/datepicker/Monment.js"></script>
+    <script src="~/Content/admin/datepicker/Datepicker.js"></script>
+    @RenderSection("jsFooter", required:false)
+</body>
+</html>
