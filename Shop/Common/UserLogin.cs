@@ -10,5 +10,6 @@ namespace Shop.Common
     {
         public int UserID { get; set; }
         public string UserName { get; set; }
+        public int RightCode { get; set; }
     }
 }
