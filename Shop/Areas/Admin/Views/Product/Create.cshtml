@@ -37,20 +37,9 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Tên Sản Phẩm</th>
-                                <td>@Html.TextBoxFor(model => model.Name, new { @class = "textbox" })</td>
-                            </tr>
-                            <tr>
                                 <th class="col-lg-1" style="text-align:center;">Loại SP</th>
                                 <td>
-                                    @Html.DropDownListFor(model => model.Cate_ID, null, new { @class = "textbox" })
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="col-lg-1" style="text-align:center;">Ảnh</th>
-                                <td class="col-lg-3">
-                                    <a class="btn btn-success col-lg-2" id="btnSelectImage" href="#">Chọn ảnh</a>
-                                    @Html.TextBoxFor(model => model.ImageLink, new { @class = "textbox" })
+                                    @Html.DropDownListFor(model => model.CateID, null, new { @class = "textbox" })
                                 </td>
                             </tr>
                             <tr>
@@ -58,12 +47,17 @@
                                 <td>@Html.TextBoxFor(model => model.Price, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Khuyến Mãi</th>
-                                <td>@Html.TextBoxFor(model => model.Discount, new { @class = "textbox" })</td>
+                                <th class="col-lg-1" style="text-align:center;">CPU</th>
+                                <td>@Html.TextBoxFor(model => model.CPU, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Mô tả</th>
-                                <td>@Html.TextAreaFor(model => model.Describe, new { @class = "textbox" })</td>
+                                <th class="col-lg-1" style="text-align:center;">Bộ Nhớ</th>
+                                <td>@Html.TextAreaFor(model => model.StorageAmount, new { @class = "textbox" })</td>
+                            </tr>
+
+                            <tr>
+                                <th class="col-lg-1" style="text-align:center;">Pin</th>
+                                <td>@Html.TextAreaFor(model => model.Pin, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
                                 <th class="col-lg-1" style="text-align:center;">Ngày Tạo</th>
@@ -87,17 +81,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            @*<tr>
-                                    <td>
-                                        <div>
-                                            <input type="button" value="Chọn ảnh" onclick="$('#uploadFile').click()" /><input type="file" id="ImageList"/>
-                                            @Html.TextBoxFor(model => model.ImageLink,new { htmlAttribute = new { @class = "textbox" }})
-                                        </div>
-                                    </td>
-                                </tr>*@
                             <tr>
                                 <td colspan="2">
-                                    <input type="submit" value="Create" name="Create" class="btn btn-default" />
+                                    <input type="submit" value="Update" name="Update" class="btn btn-default" />
                                 </td>
                             </tr>
                         </table>

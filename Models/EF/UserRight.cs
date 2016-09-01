@@ -12,24 +12,18 @@ namespace Models.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class UserRight
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Transaction()
+        public UserRight()
         {
-            this.Orders = new HashSet<Order>();
+            this.Users = new HashSet<User>();
         }
     
         public int ID { get; set; }
-        public System.DateTime Date { get; set; }
-        public int PayMethodID { get; set; }
-        public int UserID { get; set; }
-        public Nullable<decimal> TotalPrice { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public string Right_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual PayMethod PayMethod { get; set; }
-        public virtual User User { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

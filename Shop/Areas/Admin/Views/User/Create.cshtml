@@ -4,13 +4,13 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @section jsFooter{
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         $(function () {
             $('#datetimepicker1').datetimepicker({
                 format: 'MM/DD/YYYY'
             });
         });
-    </script>
+    </script>*@
 }
 @using (Html.BeginForm("Create", "User", FormMethod.Post))
 {
@@ -25,19 +25,7 @@
                         <table class="table">
                             <tr>
                                 <th class="col-lg-3" style="text-align:center;">Tên</th>
-                                <td>@Html.TextBoxFor(model => model.Name, new { @class = "textbox" })</td>
-                            </tr>
-                            <tr>
-                                <th class="col-lg-3" style="text-align:center;">Địa Chỉ</th>
-                                <td>@Html.TextBoxFor(model => model.Address, new { @class = "textbox" })</td>
-                            </tr>
-                            <tr>
-                                <th class="col-lg-3" style="text-align:center;">Số ĐT</th>
-                                <td>@Html.TextBoxFor(model => model.Phone, new { @class = "textbox" })</td>
-                            </tr>
-                            <tr>
-                                <th class="col-lg-3" style="text-align:center;">Email</th>
-                                <td>@Html.TextBoxFor(model => model.Email, new { @class = "textbox" })</td>
+                                <td>@Html.TextBoxFor(model => model.FullName, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
                                 <th class="col-lg-3" style="text-align:center;">Tài Khoản</th>
@@ -48,31 +36,27 @@
                                 <td>@Html.TextBoxFor(model => model.Password, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
+                                <th class="col-lg-3" style="text-align:center;">Địa Chỉ</th>
+                                <td>@Html.TextBoxFor(model => model.Address, new { @class = "textbox" })</td>
+                            </tr>
+                            <tr>
+                                <th class="col-lg-3" style="text-align:center;">Số ĐT</th>
+                                <td>@Html.TextBoxFor(model => model.PhoneNumber, new { @class = "textbox" })</td>
+                            </tr>
+                            <tr>
+                                <th class="col-lg-3" style="text-align:center;">Email</th>
+                                <td>@Html.TextBoxFor(model => model.Email, new { @class = "textbox" })</td>
+                            </tr>
+                            <tr>
                                 <th class="col-lg-3" style="text-align:center;">Chức Vụ</th>
                                 <td>
-                                    @Html.DropDownListFor(model => model.MaChucVu, null, new { @class = "textbox" })
+                                    @Html.DropDownListFor(model => model.User_Right, null, new { @class = "textbox" })
                                 </td>
                             </tr>
                             <tr>
-                                <th class="col-lg-3" style="text-align:center;">Ngày Sinh</th>
+                                <th class="col-lg-3" style="text-align:center;">Số thẻ</th>
                                 <td>
-                                    <div>
-                                        <section class="content">
-                                            <div class="row">
-                                                <div class='col-sm-3'>
-                                                    <div class="form-group">
-                                                        <div class='input-group date' id='datetimepicker1'>
-                                                            @Html.EditorFor(model => model.BirthDay, new { @class = "textbox1 from-control", value = "model.BirthDay" })
-                                                            <span class="input-group-addon">
-                                                                <span class="glyphicon glyphicon-calendar"></span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </section>
-                                    </div>
+                                    @Html.TextBoxFor(model => model.CardIDNumbar, null, new { @class = "textbox" })
                                 </td>
                             </tr>
                             <tr>

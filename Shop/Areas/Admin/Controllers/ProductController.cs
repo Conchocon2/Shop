@@ -41,7 +41,7 @@ namespace Shop.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm SP ko thành công");
                 }
             }
-            SetCate(inputModel.Cate_ID);
+            SetCate(inputModel.CateID);
             return View("Create");
         }
         #endregion
@@ -69,11 +69,12 @@ namespace Shop.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật không thành công");
                 }
             }
+            SetCate(sanpham.CateID);
             return View("Edit");
         }
         #endregion
-        #region[Delete
-        [HttpPost]
+        #region[Delete]
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             new ProductDAO().Delete(id);
@@ -83,7 +84,7 @@ namespace Shop.Areas.Admin.Controllers
         public void SetCate(long? cateID = null)
         {
             var dao = new CategoryDAO();
-            ViewBag.Cate_ID = new SelectList(dao.ListLoaiSP(), "ID", "CateName", cateID);
+            ViewBag.CateID = new SelectList(dao.ListLoaiSP(), "ID", "CateName", cateID);
         }
     }
 }

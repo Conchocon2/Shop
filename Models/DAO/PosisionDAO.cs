@@ -9,14 +9,14 @@ namespace Models.DAO
 {
     public class PosisionDAO
     {
-        ShopDbContext db = null;
+        ShopDemoEntities db = null;
         public PosisionDAO()
         {
-            db = new ShopDbContext();
+            db = new ShopDemoEntities();
         }
-        public List<ChucVu> ListPosision()
+        public List<UserRight> ListPosision()
         {
-            return db.ChucVus.ToList();
+            return db.UserRights.ToList();
         }
     }
 }

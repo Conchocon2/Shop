@@ -1,4 +1,4 @@
-﻿@model Models.EF.Product
+﻿@model Models.EF.Phone
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -31,28 +31,15 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading" style="text-align:center">
-                    <h5>Update Tài Khoản</h5>
+                    <h5>Update</h5>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Tên Sản Phẩm</th>
-                                <td>@Html.TextBoxFor(model => model.Name, new { @class = "textbox" })</td>
-                            </tr>
-                            <tr>
                                 <th class="col-lg-1" style="text-align:center;">Loại SP</th>
                                 <td>
-                                    @Html.DropDownListFor(model => model.Cate_ID, null, new { @class = "textbox" })
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="col-lg-1" style="text-align:center;">Ảnh</th>
-                                <td class="col-lg-3">
-                                    <img src="@Url.Content(Model.ImageLink)" width="250" />
-                                    <br />
-                                    <a class="btn btn-success col-lg-2" id="btnSelectImage" href="#">Sửa ảnh</a>
-                                    @Html.TextBoxFor(model => model.ImageLink, new { @class = "textbox" })
+                                    @Html.DropDownListFor(model => model.CateID, null, new { @class = "textbox" })
                                 </td>
                             </tr>
                             <tr>
@@ -60,12 +47,17 @@
                                 <td>@Html.TextBoxFor(model => model.Price, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Khuyến Mãi</th>
-                                <td>@Html.TextBoxFor(model => model.Discount, new { @class = "textbox" })</td>
+                                <th class="col-lg-1" style="text-align:center;">CPU</th>
+                                <td>@Html.TextBoxFor(model => model.CPU, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
-                                <th class="col-lg-1" style="text-align:center;">Mô tả</th>
-                                <td>@Html.TextAreaFor(model => model.Describe, new { @class = "textbox" })</td>
+                                <th class="col-lg-1" style="text-align:center;">Bộ Nhớ</th>
+                                <td>@Html.TextAreaFor(model => model.StorageAmount, new { @class = "textbox" })</td>
+                            </tr>
+
+                            <tr>
+                                <th class="col-lg-1" style="text-align:center;">Pin</th>
+                                <td>@Html.TextAreaFor(model => model.Pin, new { @class = "textbox" })</td>
                             </tr>
                             <tr>
                                 <th class="col-lg-1" style="text-align:center;">Ngày Tạo</th>

@@ -9,10 +9,10 @@ namespace Models.DAO
 {
     public class CategoryDAO
     {
-        ShopDbContext db = null;
+        ShopDemoEntities db = null;
         public CategoryDAO()
         {
-            db = new ShopDbContext();
+            db = new ShopDemoEntities();
         }
         public List<Category> ListLoaiSP()
         {

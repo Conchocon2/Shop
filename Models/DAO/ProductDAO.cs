@@ -10,10 +10,10 @@ namespace Models.DAO
 {
     public class ProductDAO
     {
-        ShopDbContext db = null;
+        ShopDemoEntities db = null;
         public ProductDAO()
         {
-            db = new ShopDbContext();
+            db = new ShopDemoEntities();
         }
         public long Insert(Product model)
         {
@@ -30,9 +30,9 @@ namespace Models.DAO
             IQueryable<Product> model = db.Products;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Name.Contains(searchString));
+                model = model.Where(x => x.CPU.Contains(searchString));
             }
-            return model.OrderBy(x => x.Name).ToPagedList(page, pageSize);
+            return model.OrderBy(x => x.CPU).ToPagedList(page, pageSize);
         }
         public bool Delete(int id)
         {
@@ -69,13 +69,13 @@ namespace Models.DAO
             try
             {
                 var product = db.Products.Find(model.ID);
-                product.Name = model.Name;
+                product.CPU = model.CPU;
                 product.Price = model.Price;
-                product.Describe = model.Describe;
-                product.Discount = model.Discount;
-                product.Cate_ID = model.Cate_ID;
-                product.CreateDate = model.CreateDate;
-                product.ImageLink = model.ImageLink;
+                product.StorageAmount = model.StorageAmount;
+                product.Pin = model.Pin;
+                product.ImageID = model.ImageID;
+                product.CateID = model.CateID;
+                product.Color = model.Color;
                 db.SaveChanges();
                 return true;
             }

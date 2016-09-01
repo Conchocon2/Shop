@@ -40,7 +40,7 @@ namespace Shop.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm ko thành công");
                 }
             }
-            SetViewBag(inputModel.MaChucVu);
+            SetViewBag(inputModel.User_Right);
             return View("Create");
         }
         #endregion
@@ -67,7 +67,7 @@ namespace Shop.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật ko thành công");
                 }
             }
-            SetViewBag(inputModel.MaChucVu);
+            SetViewBag(inputModel.User_Right);
             return View("Edit");
         }
         #endregion
@@ -82,7 +82,7 @@ namespace Shop.Areas.Admin.Controllers
         public void SetViewBag(long? selectedID = null)
         {
             var dao = new PosisionDAO();
-            ViewBag.MaChucVu = new SelectList(dao.ListPosision(), "MaChucVu", "TenChucVu", selectedID);
+            ViewBag.User_Right = new SelectList(dao.ListPosision(), "ID", "Right_Name", selectedID);
         }
     }
 }

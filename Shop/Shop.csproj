@@ -1959,6 +1959,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Phone\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Uploat\" />

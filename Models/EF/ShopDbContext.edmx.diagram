@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0229eba660944c13b2fd7efb4b565335" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopDemoModel.Category" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Discount" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Manufacturer" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Order" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.PayMethod" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Photo" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Product" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.Transaction" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.UserRight" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDemoModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ShopDemoModel.FK_Category_Manufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK_Phones_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Orders__Discount__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Orders__ProductI__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Orders__Transact__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Transacti__payme__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Phone__pID__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Transacti__useri__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopDemoModel.FK__Users__user_righ__1BFD2C07" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

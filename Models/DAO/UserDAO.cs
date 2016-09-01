@@ -10,10 +10,10 @@ namespace Models.DAO
 {
     public class UserDAO
     {
-        ShopDbContext db = null;
+        ShopDemoEntities db = null;
         public UserDAO()
         {
-            db = new ShopDbContext();
+            db = new ShopDemoEntities();
         }
         public long Insert(User entity)
         {
@@ -26,14 +26,14 @@ namespace Models.DAO
             try
             {
                 var user = db.Users.Find(model.ID);
-                user.Name = model.Name;
+                user.FullName = model.FullName;
                 user.Address = model.Address;
-                user.Email = model.Email;
-                user.Phone = model.Phone;
+                user.Password = model.Password;
+                user.PhoneNumber = model.PhoneNumber;
                 user.UserName = model.UserName;
                 user.Password = model.Password;
-                user.MaChucVu = model.MaChucVu;
-                user.BirthDay = model.BirthDay;
+                user.User_Right = model.User_Right;
+                user.Email = model.Email;
                 db.SaveChanges();
                 return true;
             }
@@ -57,8 +57,8 @@ namespace Models.DAO
                                 select a).ToList();
                 var hoadon = (from o in giaodich
                               join c in db.Orders
-                              on o.ID equals c.Trans_ID
-                              where c.Trans_ID == o.ID
+                              on o.ID equals c.TransactionID
+                              where c.TransactionID == o.ID
                               select c).ToList();
                 if (giaodich.Count != 0)
                 {
@@ -94,9 +94,9 @@ namespace Models.DAO
             IQueryable<User> model = db.Users;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Name.Contains(searchString) || x.UserName.Contains(searchString));
+                model = model.Where(x => x.FullName.Contains(searchString) || x.UserName.Contains(searchString));
             }
-            return model.OrderBy(x => x.Name).ToPagedList(page, pageSize);
+            return model.OrderBy(x => x.FullName).ToPagedList(page, pageSize);
         }
         public User GetByString(string userName)
         {
